@@ -281,6 +281,9 @@ read_fstab(vold)
 # vold might need to search loopback apex files
 allow vold vendor_apex_file:file r_file_perms;
 
+# vold might need to search loopback apex files
+allow vold vendor_apex_file:file r_file_perms;
+
 neverallow {
     domain
     -vold
