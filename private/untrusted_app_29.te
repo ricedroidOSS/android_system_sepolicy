@@ -18,3 +18,19 @@ bluetooth_domain(untrusted_app_29)
 # allow sending RTM_GETNEIGH{TBL} messages.
 allow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
 auditallow untrusted_app_29 self:netlink_route_socket nlmsg_getneigh;
+
+# Android apps compatibility
+allow untrusted_app_29 cache_file:lnk_file r_file_perms;
+auditallow untrusted_app_29 cache_file:lnk_file r_file_perms;
+
+allow untrusted_app_29 device:dir r_dir_perms;
+auditallow untrusted_app_29 device:dir r_dir_perms;
+
+allow untrusted_app_29 window_service:service_manager find;
+auditallow untrusted_app_29 window_service:service_manager find;
+
+allow untrusted_app_29 self:udp_socket ioctl;
+auditallow untrusted_app_29 self:udp_socket ioctl;
+
+allow untrusted_app_29 vold_exec:file r_file_perms;
+auditallow untrusted_app_29 vold_exec:file r_file_perms;

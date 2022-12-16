@@ -157,6 +157,17 @@ dontaudit untrusted_app_all proc_stat:file read;
 dontaudit untrusted_app_all proc_vmstat:file read;
 dontaudit untrusted_app_all proc_uptime:file read;
 
+dontaudit untrusted_app_all cgroup:file r_file_perms;
+dontaudit untrusted_app_all mnt_sdcard_file:lnk_file r_file_perms;
+dontaudit untrusted_app_all proc_net_tcp_udp:file r_file_perms;
+
+# Android apps compatibility
+allow untrusted_app_all proc_zoneinfo:file r_file_perms;
+auditallow untrusted_app_all proc_zoneinfo:file r_file_perms;
+
+allow untrusted_app_all sysfs_net:dir r_dir_perms;
+auditallow untrusted_app_all sysfs_net:dir r_dir_perms;
+
 # Allow the allocation and use of ptys
 # Used by: https://play.google.com/store/apps/details?id=jackpal.androidterm
 create_pty(untrusted_app_all)
