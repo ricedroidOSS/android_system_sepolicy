@@ -107,6 +107,9 @@ allow platform_app stats_service:service_manager find;
 # Allow externalstorage access
 allow platform_app mnt_pass_through_file:dir { create_dir_perms mounton };
 
+# Allow bypassing the FUSE layer
+r_dir_file(platform_app, mnt_pass_through_file)
+
 # Allow platform apps to log via statsd.
 binder_call(platform_app, statsd)
 
