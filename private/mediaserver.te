@@ -18,3 +18,6 @@ get_prop(mediaserver, media_config_prop)
 
 # Allow mediaserver to start media.transcoding service via ctl.start.
 set_prop(mediaserver, ctl_mediatranscoding_prop);
+
+# Allow mediaserver to get wfd properties
+get_prop(mediaserver, media_wfd_prop);
