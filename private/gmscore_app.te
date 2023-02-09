@@ -151,6 +151,9 @@ get_prop(gmscore_app, dck_prop)
 
 get_prop(gmscore_app, incremental_prop)
 
+# Allow GMSCore to read RKP properties for the purpose of GTS testing.
+get_prop(gmscore_app, remote_prov_prop)
+
 # Do not allow getting permission-protected network information from sysfs.
 neverallow gmscore_app sysfs_net:file *;
 
